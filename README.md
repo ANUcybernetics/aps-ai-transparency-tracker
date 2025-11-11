@@ -13,7 +13,10 @@ annually.
 
 This project automatically scrapes these statements and stores them as markdown
 files with YAML frontmatter, allowing changes to be tracked over time through
-git.
+git. The list of agencies is from
+[the APSC](https://www.apsc.gov.au/aps-agencies-size-and-function) with acronyms
+cross-referenced from
+[PM&C](https://www.pmc.gov.au/resources/abbreviations-and-acronyms-groups-or-topics).
 
 ## Usage
 
