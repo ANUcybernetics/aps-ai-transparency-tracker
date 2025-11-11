@@ -1,15 +1,4 @@
 #!/usr/bin/env -S uv run
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-#     "httpx",
-#     "beautifulsoup4",
-#     "lxml",
-#     "pyyaml",
-#     "html2text",
-#     "PyPDF2",
-# ]
-# ///
 """
 Australian Government AI Transparency Statement Scraper
 
