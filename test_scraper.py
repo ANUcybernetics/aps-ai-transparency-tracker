@@ -304,3 +304,45 @@ def test_fetch_first_few_departments(dept_index):
     if result["error"] is None:
         assert result["markdown"]
         assert result["status_code"] == 200
+
+
+def test_all_departments_can_be_fetched():
+    """Integration test: verify all departments in departments.toml can be fetched and parsed."""
+    departments = load_departments()
+    assert len(departments) > 0, "No departments loaded from departments.toml"
+
+    failed_departments = []
+
+    for dept in departments:
+        result = fetch_statement(dept)
+
+        # Verify result structure
+        assert isinstance(result, dict), f"{dept.slug}: result is not a dict"
+        assert "error" in result, f"{dept.slug}: missing 'error' field"
+
+        # Track failures
+        if result["error"] is not None:
+            failed_departments.append(
+                {
+                    "name": dept.name,
+                    "slug": dept.slug,
+                    "url": dept.url,
+                    "error": result["error"],
+                    "status_code": result["status_code"],
+                }
+            )
+        else:
+            # Verify successful fetch has required content
+            assert result["status_code"] == 200, f"{dept.slug}: status code not 200"
+            assert result["markdown"], f"{dept.slug}: no markdown content"
+            assert len(result["markdown"]) > 0, f"{dept.slug}: empty markdown"
+
+    # Report all failures at once
+    if failed_departments:
+        failure_summary = "\n".join(
+            f"  - {f['name']} ({f['slug']}): {f['error']} (status: {f['status_code']})"
+            for f in failed_departments
+        )
+        pytest.fail(
+            f"{len(failed_departments)}/{len(departments)} departments failed:\n{failure_summary}"
+        )
