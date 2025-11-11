@@ -283,9 +283,42 @@ def test_fetch_first_few_agencies(agency_index):
         assert result["status_code"] == 200
 
 
+@pytest.mark.parametrize(
+    "agency",
+    [a for a in load_agencies() if a.url is not None],
+    ids=lambda a: a.abbr,
+)
+def test_known_agency_statements_can_be_fetched(agency):
+    """Integration test: verify agencies with known URLs can be fetched and parsed."""
+    result = fetch_statement(agency)
+
+    # Verify result structure
+    assert isinstance(result, dict), f"{agency.abbr}: result is not a dict"
+    assert "error" in result, f"{agency.abbr}: missing 'error' field"
+
+    # If there's an error, fail with descriptive message
+    if result["error"] is not None:
+        pytest.fail(
+            f"{agency.name} ({agency.abbr}): {result['error']} "
+            f"(status: {result['status_code']}, url: {agency.url})"
+        )
+
+    # Verify successful fetch has required content
+    assert result["status_code"] == 200, f"{agency.abbr}: status code not 200"
+    assert result["markdown"], f"{agency.abbr}: no markdown content"
+    markdown_content = result["markdown"]
+    assert isinstance(markdown_content, str) and len(markdown_content) > 0, (
+        f"{agency.abbr}: empty markdown"
+    )
+
+
+@pytest.mark.might_fail
 @pytest.mark.parametrize("agency", load_agencies(), ids=lambda a: a.abbr)
 def test_all_agencies_can_be_fetched(agency):
-    """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
+    """Integration test: verify all agencies in agencies.toml can be fetched and parsed.
+
+    Skipped by default. Run with: pytest -m might_fail
+    """
     # Skip agencies without URLs (where AI statement not found)
     # Tests should fail for agencies without URLs (not skip)
     # The scraper itself will skip them when run

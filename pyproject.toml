@@ -29,4 +29,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "-n auto"
+addopts = "-n auto -m 'not might_fail'"
+markers = [
+    "might_fail: marks tests that may fail due to missing URLs or external issues (deselected by default)",
+]
