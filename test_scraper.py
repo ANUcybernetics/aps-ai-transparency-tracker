@@ -287,8 +287,13 @@ def test_fetch_first_few_agencies(agency_index):
 def test_all_agencies_can_be_fetched(agency):
     """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
     # Skip agencies without URLs (where AI statement not found)
+    # Tests should fail for agencies without URLs (not skip)
+    # The scraper itself will skip them when run
     if agency.url is None:
-        pytest.skip(f"{agency.abbr}: No AI transparency statement URL available")
+        pytest.fail(
+            f"{agency.name} ({agency.abbr}): No URL configured. "
+            "Either find the AI transparency statement URL or confirm none exists."
+        )
 
     result = fetch_statement(agency)
 
