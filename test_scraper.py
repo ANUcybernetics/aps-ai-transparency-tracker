@@ -163,8 +163,9 @@ def test_save_statement_creates_valid_file():
 
     with TemporaryDirectory() as tmpdir:
         output_dir = Path(tmpdir)
-        save_statement(dept, data, output_dir)
+        result = save_statement(dept, data, output_dir)
 
+        assert result is True
         filepath = output_dir / "test.md"
         assert filepath.exists()
 
@@ -183,13 +184,23 @@ def test_save_statement_creates_valid_file():
         assert metadata["department"] == "Test Department"
         assert metadata["slug"] == "test"
         assert metadata["source_url"] == "https://example.com/test"
+        assert metadata["title"] == "Test Statement"
+        assert "fetched_at" in metadata
+
+        # Should not have removed fields
+        assert "status_code" not in metadata
+        assert "error" not in metadata
+        assert "last_modified" not in metadata
+
+        # final_url should not be present when it matches source_url
+        assert "final_url" not in metadata
 
         # Markdown content should be present
         assert "# Test Content" in content
 
 
 def test_save_statement_handles_error_case():
-    """Test save_statement handles error data correctly."""
+    """Test save_statement skips file creation when there's an error."""
     dept = Department(
         name="Test Department", slug="test-error", url="https://example.com/test"
     )
@@ -205,20 +216,16 @@ def test_save_statement_handles_error_case():
 
     with TemporaryDirectory() as tmpdir:
         output_dir = Path(tmpdir)
-        save_statement(dept, data, output_dir)
+        result = save_statement(dept, data, output_dir)
 
+        # Should return False and not create file
+        assert result is False
         filepath = output_dir / "test-error.md"
-        assert filepath.exists()
-
-        content = filepath.read_text()
-
-        # Should include error in content
-        assert "Error fetching statement" in content
-        assert "Not found" in content
+        assert not filepath.exists()
 
 
 def test_save_statement_handles_no_content():
-    """Test save_statement handles case with no markdown or error."""
+    """Test save_statement skips file creation when there's no markdown."""
     dept = Department(
         name="Test Department", slug="test-empty", url="https://example.com/test"
     )
@@ -234,13 +241,44 @@ def test_save_statement_handles_no_content():
 
     with TemporaryDirectory() as tmpdir:
         output_dir = Path(tmpdir)
-        save_statement(dept, data, output_dir)
+        result = save_statement(dept, data, output_dir)
 
+        # Should return False and not create file
+        assert result is False
         filepath = output_dir / "test-empty.md"
-        assert filepath.exists()
+        assert not filepath.exists()
 
+
+def test_save_statement_includes_final_url_on_redirect():
+    """Test save_statement includes final_url when it differs from source_url."""
+    dept = Department(
+        name="Test Department", slug="test-redirect", url="https://example.com/old"
+    )
+
+    data = {
+        "title": "Test Statement",
+        "markdown": "# Test Content",
+        "last_modified": None,
+        "status_code": 200,
+        "final_url": "https://example.com/new",
+        "error": None,
+    }
+
+    with TemporaryDirectory() as tmpdir:
+        output_dir = Path(tmpdir)
+        result = save_statement(dept, data, output_dir)
+
+        assert result is True
+        filepath = output_dir / "test-redirect.md"
         content = filepath.read_text()
-        assert "No content available" in content
+
+        parts = content.split("---\n")
+        yaml_content = parts[1]
+        metadata = yaml.safe_load(yaml_content)
+
+        # final_url should be present when it differs from source_url
+        assert metadata["final_url"] == "https://example.com/new"
+        assert metadata["source_url"] == "https://example.com/old"
 
 
 @pytest.mark.parametrize("dept_index", range(min(3, len(DEPARTMENTS))))

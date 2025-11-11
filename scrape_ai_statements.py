@@ -247,7 +247,7 @@ def fetch_statement(department: Department) -> dict[str, str | int | None]:
 
 def save_statement(
     department: Department, data: dict[str, str | int | None], output_dir: Path
-) -> None:
+) -> bool:
     """
     Save statement as markdown file with YAML frontmatter.
 
@@ -255,24 +255,32 @@ def save_statement(
         department: Department information
         data: Parsed statement data
         output_dir: Directory to save files
+
+    Returns:
+        True if file was saved, False if skipped due to error
     """
+    # Skip saving if there was an error
+    if data["error"] or not data["markdown"]:
+        logger.warning(f"Skipping {department.slug} due to fetch error")
+        return False
+
     output_dir.mkdir(parents=True, exist_ok=True)
 
     filename = f"{department.slug}.md"
     filepath = output_dir / filename
 
-    # Prepare frontmatter (ensure all values are serializable)
+    # Prepare minimal frontmatter
     frontmatter = {
         "department": department.name,
         "slug": department.slug,
         "source_url": department.url,
-        "final_url": str(data["final_url"]) if data["final_url"] else None,
         "fetched_at": datetime.now(UTC).isoformat(),
         "title": data["title"],
-        "last_modified": data["last_modified"],
-        "status_code": data["status_code"],
-        "error": data["error"],
     }
+
+    # Only include final_url if it differs from source_url (redirects)
+    if data["final_url"] and data["final_url"] != department.url:
+        frontmatter["final_url"] = str(data["final_url"])
 
     # Build file content
     content_parts = ["---"]
@@ -281,19 +289,14 @@ def save_statement(
     )
     content_parts.append("---")
     content_parts.append("")
-
-    if data["markdown"]:
-        content_parts.append(data["markdown"])
-    elif data["error"]:
-        content_parts.append(f"# Error fetching statement\n\n{data['error']}")
-    else:
-        content_parts.append("# No content available")
+    content_parts.append(data["markdown"])
 
     content = "\n".join(content_parts)
 
     # Write file
     filepath.write_text(content, encoding="utf-8")
     logger.info(f"Saved {filename}")
+    return True
 
 
 def main() -> int:
@@ -311,12 +314,10 @@ def main() -> int:
 
     for department in DEPARTMENTS:
         data = fetch_statement(department)
-        save_statement(department, data, output_dir)
-
-        if data["error"]:
-            error_count += 1
-        else:
+        if save_statement(department, data, output_dir):
             success_count += 1
+        else:
+            error_count += 1
 
     logger.info(f"Completed: {success_count} successful, {error_count} errors")
 
