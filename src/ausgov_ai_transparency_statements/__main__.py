@@ -4,26 +4,26 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-from .scraper import fetch_statement, load_departments, logger, save_statement
+from .scraper import fetch_statement, logger, save_statement
 
 
 def main() -> int:
     """Main execution function."""
     output_dir = Path.cwd() / "statements"
-    departments = load_departments()
+    agencies = load_agencies()
 
     logger.info(
         f"Starting AI Transparency Statement scrape at {datetime.now(UTC).isoformat()}"
     )
     logger.info(f"Output directory: {output_dir}")
-    logger.info(f"Processing {len(departments)} departments")
+    logger.info(f"Processing {len(agencies)} agencies")
 
     success_count = 0
     error_count = 0
 
-    for department in departments:
-        data = fetch_statement(department)
-        if save_statement(department, data, output_dir):
+    for agency in agencies:
+        data = fetch_statement(agency)
+        if save_statement(agency, data, output_dir):
             success_count += 1
         else:
             error_count += 1

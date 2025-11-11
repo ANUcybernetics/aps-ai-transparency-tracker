@@ -20,28 +20,27 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-class Department(NamedTuple):
-    """Represents an Australian Government department with its AI transparency statement."""
+class Agency(NamedTuple):
+    """Represents an Australian Government agency with its AI transparency statement."""
 
     name: str
     slug: str
     url: str
 
 
-def load_departments() -> list[Department]:
+def load_agencies() -> list[Agency]:
     """
-    Load department data from departments.toml file.
+    Load agency data from agencies.toml file.
 
     Returns:
-        List of Department objects
+        List of Agency objects
     """
-    toml_path = Path(__file__).parent.parent.parent / "departments.toml"
+    toml_path = Path(__file__).parent.parent.parent / "agencies.toml"
     with open(toml_path, "rb") as f:
         data = tomllib.load(f)
 
     return [
-        Department(name=d["name"], slug=d["slug"], url=d["url"])
-        for d in data["departments"]
+        Agency(name=d["name"], slug=d["slug"], url=d["url"]) for d in data["agencies"]
     ]
 
 
@@ -101,21 +100,21 @@ def extract_main_content(soup: BeautifulSoup) -> str:
     return str(main_content) if main_content else str(soup)
 
 
-def fetch_statement(department: Department) -> dict[str, str | int | None]:
+def fetch_statement(agency: Agency) -> dict[str, str | int | None]:
     """
     Fetch and parse an AI transparency statement.
 
     Args:
-        department: Department information
+        agency: Agency information
 
     Returns:
         Dictionary containing parsed content and metadata
     """
-    logger.info(f"Fetching {department.name}...")
+    logger.info(f"Fetching {agency.name}...")
 
     try:
         response = httpx.get(
-            department.url,
+            agency.url,
             follow_redirects=True,
             timeout=30.0,
             headers={"User-Agent": "AU-Gov-AI-Transparency-Tracker/1.0"},
@@ -124,7 +123,7 @@ def fetch_statement(department: Department) -> dict[str, str | int | None]:
 
         # Check if content is PDF
         content_type = response.headers.get("content-type", "").lower()
-        is_pdf = "application/pdf" in content_type or department.url.endswith(".pdf")
+        is_pdf = "application/pdf" in content_type or agency.url.endswith(".pdf")
 
         if is_pdf:
             # Extract text from PDF
@@ -163,7 +162,7 @@ def fetch_statement(department: Department) -> dict[str, str | int | None]:
 
             # Extract main content
             main_html = extract_main_content(soup)
-            markdown_content = clean_html_to_markdown(main_html, department.url)
+            markdown_content = clean_html_to_markdown(main_html, agency.url)
 
             # Extract last modified date if available - ensure it's a plain string
             last_modified = None
@@ -181,35 +180,35 @@ def fetch_statement(department: Department) -> dict[str, str | int | None]:
             }
 
     except httpx.HTTPStatusError as e:
-        logger.error(f"HTTP error fetching {department.name}: {e}")
+        logger.error(f"HTTP error fetching {agency.name}: {e}")
         return {
             "title": None,
             "markdown": None,
             "last_modified": None,
             "status_code": e.response.status_code,
-            "final_url": department.url,
+            "final_url": agency.url,
             "error": str(e),
         }
     except Exception as e:
-        logger.error(f"Error fetching {department.name}: {e}")
+        logger.error(f"Error fetching {agency.name}: {e}")
         return {
             "title": None,
             "markdown": None,
             "last_modified": None,
             "status_code": None,
-            "final_url": department.url,
+            "final_url": agency.url,
             "error": str(e),
         }
 
 
 def save_statement(
-    department: Department, data: dict[str, str | int | None], output_dir: Path
+    agency: Agency, data: dict[str, str | int | None], output_dir: Path
 ) -> bool:
     """
     Save statement as markdown file with YAML frontmatter.
 
     Args:
-        department: Department information
+        agency: Agency information
         data: Parsed statement data
         output_dir: Directory to save files
 
@@ -218,25 +217,25 @@ def save_statement(
     """
     # Skip saving if there was an error
     if data["error"] or not data["markdown"]:
-        logger.warning(f"Skipping {department.slug} due to fetch error")
+        logger.warning(f"Skipping {agency.slug} due to fetch error")
         return False
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    filename = f"{department.slug}.md"
+    filename = f"{agency.slug}.md"
     filepath = output_dir / filename
 
     # Prepare minimal frontmatter
     frontmatter = {
-        "department": department.name,
-        "slug": department.slug,
-        "source_url": department.url,
+        "agency": agency.name,
+        "slug": agency.slug,
+        "source_url": agency.url,
         "fetched_at": datetime.now(UTC).isoformat(),
         "title": data["title"],
     }
 
     # Only include final_url if it differs from source_url (redirects)
-    if data["final_url"] and data["final_url"] != department.url:
+    if data["final_url"] and data["final_url"] != agency.url:
         frontmatter["final_url"] = str(data["final_url"])
 
     # Build file content

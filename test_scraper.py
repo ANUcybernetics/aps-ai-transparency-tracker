@@ -16,30 +16,30 @@ import yaml
 from bs4 import BeautifulSoup
 
 from ausgov_ai_transparency_statements import (
-    Department,
+    Agency,
     clean_html_to_markdown,
     extract_main_content,
     fetch_statement,
-    load_departments,
+    load_agencies,
     save_statement,
 )
 
 
-def test_departments_list_structure():
-    """Verify departments list has required structure."""
-    departments = load_departments()
-    assert len(departments) > 0
-    for dept in departments:
-        assert isinstance(dept, Department)
-        assert dept.name
-        assert dept.slug
-        assert dept.url.startswith("http")
+def test_agencies_list_structure():
+    """Verify agencies list has required structure."""
+    agencies = load_agencies()
+    assert len(agencies) > 0
+    for agency in agencies:
+        assert isinstance(agency, Agency)
+        assert agency.name
+        assert agency.slug
+        assert agency.url.startswith("http")
 
 
-def test_departments_unique_slugs():
-    """Ensure all department slugs are unique."""
-    departments = load_departments()
-    slugs = [d.slug for d in departments]
+def test_agencies_unique_slugs():
+    """Ensure all agency slugs are unique."""
+    agencies = load_agencies()
+    slugs = [a.slug for a in agencies]
     assert len(slugs) == len(set(slugs))
 
 
@@ -100,9 +100,9 @@ def test_extract_main_content_fallback():
 
 def test_fetch_statement_returns_required_fields():
     """Test fetch_statement returns dict with all required fields."""
-    departments = load_departments()
-    dept = departments[0]
-    result = fetch_statement(dept)
+    agencies = load_agencies()
+    agency = agencies[0]
+    result = fetch_statement(agency)
 
     required_fields = {
         "title",
@@ -117,9 +117,9 @@ def test_fetch_statement_returns_required_fields():
 
 def test_fetch_statement_handles_success():
     """Test successful fetch has expected characteristics."""
-    departments = load_departments()
-    dept = departments[0]
-    result = fetch_statement(dept)
+    agencies = load_agencies()
+    agency = agencies[0]
+    result = fetch_statement(agency)
 
     # Either successful or has error
     if result["error"] is None:
@@ -134,9 +134,9 @@ def test_fetch_statement_handles_success():
 
 def test_fetch_statement_type_consistency():
     """Test fetch_statement returns consistent types."""
-    departments = load_departments()
-    dept = departments[0]
-    result = fetch_statement(dept)
+    agencies = load_agencies()
+    agency = agencies[0]
+    result = fetch_statement(agency)
 
     # Check types are consistent
     assert result["title"] is None or isinstance(result["title"], str)
@@ -149,9 +149,7 @@ def test_fetch_statement_type_consistency():
 
 def test_save_statement_creates_valid_file():
     """Test save_statement creates properly formatted file."""
-    dept = Department(
-        name="Test Department", slug="test", url="https://example.com/test"
-    )
+    dept = Agency(name="Test Agency", slug="test", url="https://example.com/test")
 
     data = {
         "title": "Test Statement",
@@ -182,7 +180,7 @@ def test_save_statement_creates_valid_file():
         # YAML should be valid
         yaml_content = parts[1]
         metadata = yaml.safe_load(yaml_content)
-        assert metadata["department"] == "Test Department"
+        assert metadata["agency"] == "Test Agency"
         assert metadata["slug"] == "test"
         assert metadata["source_url"] == "https://example.com/test"
         assert metadata["title"] == "Test Statement"
@@ -202,9 +200,7 @@ def test_save_statement_creates_valid_file():
 
 def test_save_statement_handles_error_case():
     """Test save_statement skips file creation when there's an error."""
-    dept = Department(
-        name="Test Department", slug="test-error", url="https://example.com/test"
-    )
+    dept = Agency(name="Test Agency", slug="test-error", url="https://example.com/test")
 
     data = {
         "title": None,
@@ -227,9 +223,7 @@ def test_save_statement_handles_error_case():
 
 def test_save_statement_handles_no_content():
     """Test save_statement skips file creation when there's no markdown."""
-    dept = Department(
-        name="Test Department", slug="test-empty", url="https://example.com/test"
-    )
+    dept = Agency(name="Test Agency", slug="test-empty", url="https://example.com/test")
 
     data = {
         "title": None,
@@ -252,8 +246,8 @@ def test_save_statement_handles_no_content():
 
 def test_save_statement_includes_final_url_on_redirect():
     """Test save_statement includes final_url when it differs from source_url."""
-    dept = Department(
-        name="Test Department", slug="test-redirect", url="https://example.com/old"
+    dept = Agency(
+        name="Test Agency", slug="test-redirect", url="https://example.com/old"
     )
 
     data = {
@@ -282,15 +276,15 @@ def test_save_statement_includes_final_url_on_redirect():
         assert metadata["source_url"] == "https://example.com/old"
 
 
-@pytest.mark.parametrize("dept_index", range(3))
-def test_fetch_first_few_departments(dept_index):
-    """Integration test: fetch first few departments to verify end-to-end."""
-    departments = load_departments()
-    if dept_index >= len(departments):
-        pytest.skip(f"Only {len(departments)} departments available")
+@pytest.mark.parametrize("agency_index", range(3))
+def test_fetch_first_few_agencies(agency_index):
+    """Integration test: fetch first few agencies to verify end-to-end."""
+    agencies = load_agencies()
+    if agency_index >= len(agencies):
+        pytest.skip(f"Only {len(agencies)} agencies available")
 
-    dept = departments[dept_index]
-    result = fetch_statement(dept)
+    agency = agencies[agency_index]
+    result = fetch_statement(agency)
 
     # Should return valid result structure
     assert isinstance(result, dict)
@@ -302,15 +296,15 @@ def test_fetch_first_few_departments(dept_index):
         assert result["status_code"] == 200
 
 
-def test_all_departments_can_be_fetched():
-    """Integration test: verify all departments in departments.toml can be fetched and parsed."""
-    departments = load_departments()
-    assert len(departments) > 0, "No departments loaded from departments.toml"
+def test_all_agencies_can_be_fetched():
+    """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
+    agencies = load_agencies()
+    assert len(agencies) > 0, "No agencies loaded from agencies.toml"
 
-    failed_departments = []
+    failed_agencies = []
 
-    for dept in departments:
-        result = fetch_statement(dept)
+    for agency in agencies:
+        result = fetch_statement(agency)
 
         # Verify result structure
         assert isinstance(result, dict), f"{dept.slug}: result is not a dict"
@@ -318,7 +312,7 @@ def test_all_departments_can_be_fetched():
 
         # Track failures
         if result["error"] is not None:
-            failed_departments.append(
+            failed_agencies.append(
                 {
                     "name": dept.name,
                     "slug": dept.slug,
@@ -334,11 +328,11 @@ def test_all_departments_can_be_fetched():
             assert len(result["markdown"]) > 0, f"{dept.slug}: empty markdown"
 
     # Report all failures at once
-    if failed_departments:
+    if failed_agencies:
         failure_summary = "\n".join(
             f"  - {f['name']} ({f['slug']}): {f['error']} (status: {f['status_code']})"
-            for f in failed_departments
+            for f in failed_agencies
         )
         pytest.fail(
-            f"{len(failed_departments)}/{len(departments)} departments failed:\n{failure_summary}"
+            f"{len(failed_agencies)}/{len(agencies)} departments failed:\n{failure_summary}"
         )

@@ -1,19 +1,19 @@
 """Australian Government AI Transparency Statement Scraper."""
 
 from .scraper import (
-    Department,
+    Agency,
     clean_html_to_markdown,
     extract_main_content,
     fetch_statement,
-    load_departments,
+    load_agencies,
     save_statement,
 )
 
 __all__ = [
-    "Department",
+    "Agency",
     "clean_html_to_markdown",
     "extract_main_content",
     "fetch_statement",
-    "load_departments",
+    "load_agencies",
     "save_statement",
 ]

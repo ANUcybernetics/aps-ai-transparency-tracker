@@ -6,8 +6,7 @@ This is a Python web scraping project using uv for dependency management.
 
 - Uses `uv` for package management with proper package structure
 - Project has `mise.toml`---prefix commands with `mise exec --`
-- Scrapes Australian Government AI transparency statements from department
-  websites
+- Scrapes Australian Government AI transparency statements from agency websites
 - Converts HTML/PDF to markdown with YAML frontmatter
 - Tracks changes via git commits (designed for cron jobs)
 - Dependencies defined in `pyproject.toml`: httpx, beautifulsoup4, html2text,
@@ -17,7 +16,7 @@ This is a Python web scraping project using uv for dependency management.
 
 - Run scraper: `mise exec -- uv run --module ausgov_ai_transparency_statements`
 - Run tests: `mise exec -- uv run pytest`
-- Add departments by editing `departments.toml`
+- Add agencies by editing `agencies.toml`
 - Output goes to `statements/` directory
 - Package structure:
   - `src/ausgov_ai_transparency_statements/` contains the package
@@ -26,7 +25,7 @@ This is a Python web scraping project using uv for dependency management.
 
 ## Code patterns
 
-- Uses `NamedTuple` for data classes (Department)
+- Uses `NamedTuple` for data classes (Agency)
 - Type hints throughout
 - Returns dicts with explicit `str | int | None` types
 - Handles both HTML and PDF sources

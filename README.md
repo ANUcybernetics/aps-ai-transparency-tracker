@@ -1,15 +1,15 @@
 # Australian Government AI Transparency Statements
 
 This repository tracks AI Transparency Statements from Australian Government
-departments and agencies.
+agencies.
 
 ## Background
 
 Under the
 [Policy for the responsible use of AI in government](https://www.digital.gov.au/policy/ai/policy),
-all Australian Government departments and agencies are required to publish AI
-Transparency Statements on their websites. These statements must be updated at
-least annually.
+all Australian Government agencies are required to publish AI Transparency
+Statements on their websites. These statements must be updated at least
+annually.
 
 This project automatically scrapes these statements and stores them as markdown
 files with YAML frontmatter, allowing changes to be tracked over time through
@@ -45,7 +45,7 @@ To run this automatically, add to your crontab:
 
 Each statement is saved as a markdown file with YAML frontmatter containing:
 
-- `department`: Department/agency name
+- `agency`: Agency name
 - `slug`: Short identifier used for filename
 - `source_url`: Original URL of the statement
 - `final_url`: Final URL after redirects
@@ -55,13 +55,13 @@ Each statement is saved as a markdown file with YAML frontmatter containing:
 - `status_code`: HTTP status code
 - `error`: Error message (if fetch failed)
 
-## Adding new departments
+## Adding new agencies
 
-To add a new department, edit `departments.toml` and add a new entry:
+To add a new agency, edit `agencies.toml` and add a new entry:
 
 ```toml
-[[departments]]
-name = "Department Name"
+[[agencies]]
+name = "Agency Name"
 slug = "shortname"
 url = "https://example.gov.au/ai-transparency-statement"
 ```
