@@ -32,15 +32,15 @@ def test_agencies_list_structure():
     for agency in agencies:
         assert isinstance(agency, Agency)
         assert agency.name
-        assert agency.slug
+        assert agency.abbr
         assert agency.url.startswith("http")
 
 
-def test_agencies_unique_slugs():
-    """Ensure all agency slugs are unique."""
+def test_agencies_unique_abbrs():
+    """Ensure all agency abbreviations are unique."""
     agencies = load_agencies()
-    slugs = [a.slug for a in agencies]
-    assert len(slugs) == len(set(slugs))
+    abbrs = [a.abbr for a in agencies]
+    assert len(abbrs) == len(set(abbrs))
 
 
 def test_clean_html_to_markdown_basic():
@@ -104,14 +104,7 @@ def test_fetch_statement_returns_required_fields():
     agency = agencies[0]
     result = fetch_statement(agency)
 
-    required_fields = {
-        "title",
-        "markdown",
-        "last_modified",
-        "status_code",
-        "final_url",
-        "error",
-    }
+    required_fields = {"title", "markdown", "status_code", "final_url", "error"}
     assert set(result.keys()) == required_fields
 
 
@@ -138,10 +131,8 @@ def test_fetch_statement_type_consistency():
     agency = agencies[0]
     result = fetch_statement(agency)
 
-    # Check types are consistent
     assert result["title"] is None or isinstance(result["title"], str)
     assert result["markdown"] is None or isinstance(result["markdown"], str)
-    assert result["last_modified"] is None or isinstance(result["last_modified"], str)
     assert result["status_code"] is None or isinstance(result["status_code"], int)
     assert isinstance(result["final_url"], str)
     assert result["error"] is None or isinstance(result["error"], str)
@@ -149,12 +140,11 @@ def test_fetch_statement_type_consistency():
 
 def test_save_statement_creates_valid_file():
     """Test save_statement creates properly formatted file."""
-    dept = Agency(name="Test Agency", slug="test", url="https://example.com/test")
+    dept = Agency(name="Test Agency", abbr="TEST", url="https://example.com/test")
 
     data = {
         "title": "Test Statement",
         "markdown": "# Test Content\n\nSome text here.",
-        "last_modified": "2024-01-01",
         "status_code": 200,
         "final_url": "https://example.com/test",
         "error": None,
@@ -165,7 +155,7 @@ def test_save_statement_creates_valid_file():
         result = save_statement(dept, data, output_dir)
 
         assert result is True
-        filepath = output_dir / "test.md"
+        filepath = output_dir / "TEST.md"
         assert filepath.exists()
 
         content = filepath.read_text()
@@ -181,7 +171,7 @@ def test_save_statement_creates_valid_file():
         yaml_content = parts[1]
         metadata = yaml.safe_load(yaml_content)
         assert metadata["agency"] == "Test Agency"
-        assert metadata["slug"] == "test"
+        assert metadata["abbr"] == "TEST"
         assert metadata["source_url"] == "https://example.com/test"
         assert metadata["title"] == "Test Statement"
         assert "fetched_at" in metadata
@@ -189,7 +179,6 @@ def test_save_statement_creates_valid_file():
         # Should not have removed fields
         assert "status_code" not in metadata
         assert "error" not in metadata
-        assert "last_modified" not in metadata
 
         # final_url should not be present when it matches source_url
         assert "final_url" not in metadata
@@ -200,12 +189,11 @@ def test_save_statement_creates_valid_file():
 
 def test_save_statement_handles_error_case():
     """Test save_statement skips file creation when there's an error."""
-    dept = Agency(name="Test Agency", slug="test-error", url="https://example.com/test")
+    dept = Agency(name="Test Agency", abbr="TEST-ERROR", url="https://example.com/test")
 
     data = {
         "title": None,
         "markdown": None,
-        "last_modified": None,
         "status_code": 404,
         "final_url": "https://example.com/test",
         "error": "Not found",
@@ -217,18 +205,17 @@ def test_save_statement_handles_error_case():
 
         # Should return False and not create file
         assert result is False
-        filepath = output_dir / "test-error.md"
+        filepath = output_dir / "TEST-ERROR.md"
         assert not filepath.exists()
 
 
 def test_save_statement_handles_no_content():
     """Test save_statement skips file creation when there's no markdown."""
-    dept = Agency(name="Test Agency", slug="test-empty", url="https://example.com/test")
+    dept = Agency(name="Test Agency", abbr="TEST-EMPTY", url="https://example.com/test")
 
     data = {
         "title": None,
         "markdown": None,
-        "last_modified": None,
         "status_code": 200,
         "final_url": "https://example.com/test",
         "error": None,
@@ -240,20 +227,19 @@ def test_save_statement_handles_no_content():
 
         # Should return False and not create file
         assert result is False
-        filepath = output_dir / "test-empty.md"
+        filepath = output_dir / "TEST-EMPTY.md"
         assert not filepath.exists()
 
 
 def test_save_statement_includes_final_url_on_redirect():
     """Test save_statement includes final_url when it differs from source_url."""
     dept = Agency(
-        name="Test Agency", slug="test-redirect", url="https://example.com/old"
+        name="Test Agency", abbr="TEST-REDIRECT", url="https://example.com/old"
     )
 
     data = {
         "title": "Test Statement",
         "markdown": "# Test Content",
-        "last_modified": None,
         "status_code": 200,
         "final_url": "https://example.com/new",
         "error": None,
@@ -264,7 +250,7 @@ def test_save_statement_includes_final_url_on_redirect():
         result = save_statement(dept, data, output_dir)
 
         assert result is True
-        filepath = output_dir / "test-redirect.md"
+        filepath = output_dir / "TEST-REDIRECT.md"
         content = filepath.read_text()
 
         parts = content.split("---\n")
@@ -296,23 +282,23 @@ def test_fetch_first_few_agencies(agency_index):
         assert result["status_code"] == 200
 
 
-@pytest.mark.parametrize("agency", load_agencies(), ids=lambda a: a.slug)
+@pytest.mark.parametrize("agency", load_agencies(), ids=lambda a: a.abbr)
 def test_all_agencies_can_be_fetched(agency):
     """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
     result = fetch_statement(agency)
 
     # Verify result structure
-    assert isinstance(result, dict), f"{agency.slug}: result is not a dict"
-    assert "error" in result, f"{agency.slug}: missing 'error' field"
+    assert isinstance(result, dict), f"{agency.abbr}: result is not a dict"
+    assert "error" in result, f"{agency.abbr}: missing 'error' field"
 
     # If there's an error, fail with descriptive message
     if result["error"] is not None:
         pytest.fail(
-            f"{agency.name} ({agency.slug}): {result['error']} "
+            f"{agency.name} ({agency.abbr}): {result['error']} "
             f"(status: {result['status_code']}, url: {agency.url})"
         )
 
     # Verify successful fetch has required content
-    assert result["status_code"] == 200, f"{agency.slug}: status code not 200"
-    assert result["markdown"], f"{agency.slug}: no markdown content"
-    assert len(result["markdown"]) > 0, f"{agency.slug}: empty markdown"
+    assert result["status_code"] == 200, f"{agency.abbr}: status code not 200"
+    assert result["markdown"], f"{agency.abbr}: no markdown content"
+    assert len(result["markdown"]) > 0, f"{agency.abbr}: empty markdown"
