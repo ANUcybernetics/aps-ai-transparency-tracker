@@ -1,47 +1,671 @@
+
 # Australian Government Agencies
 # AI Transparency Statement URLs
 
 [[agencies]]
 name = "Digital Transformation Agency"
 slug = "dta"
+size = "medium"
 url = "https://www.dta.gov.au/ai-transparency-statement"
 
 [[agencies]]
 name = "Treasury"
 slug = "treasury"
+size = "medium"
 url = "https://treasury.gov.au/the-department/accountability-reporting/ai-transparency-statement"
 
 [[agencies]]
 name = "Department of Agriculture, Fisheries and Forestry"
 slug = "daff"
+size = "medium"
 url = "https://www.agriculture.gov.au/about/reporting/obligations/AI-transparency-statement"
 
 [[agencies]]
 name = "Department of Health and Aged Care"
 slug = "health"
+size = "medium"
 url = "https://www.health.gov.au/about-us/corporate-reporting/our-commitments/ai-transparency-statement"
 
 [[agencies]]
 name = "National Indigenous Australians Agency"
 slug = "niaa"
+size = "medium"
 url = "https://www.niaa.gov.au/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Australian Institute of Criminology"
 slug = "aic"
+size = "unknown"
 url = "https://www.aic.gov.au/about-us/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Australian Securities and Investments Commission"
 slug = "asic"
+size = "unknown"
 url = "https://www.asic.gov.au/about-asic/what-we-do/how-we-operate/accountability-and-reporting/artificial-intelligence-transparency-statement/"
 
 [[agencies]]
 name = "Department of Education"
 slug = "education"
+size = "medium"
 url = "https://www.education.gov.au/about-department/corporate-reporting/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Department of Home Affairs"
 slug = "homeaffairs"
+size = "extra-large"
 url = "https://www.homeaffairs.gov.au/commitments/files/ai-transparency-statement.pdf"
+
+[[agencies]]
+name = "Aboriginal Hostels Limited"
+slug = "aboriginal-hostels-limited"
+size = "medium"
+url = "https://www.aboriginal-hostels-limited.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Administrative Review Tribunal"
+slug = "administrative-review-tribunal"
+size = "medium"
+url = "https://www.administrative-review-tribunal.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Aged Care Quality and Safety Commission"
+slug = "aged-care-quality-and-safety"
+size = "medium"
+url = "https://www.aged-care-quality-and-safety.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Asbestos and Silica Safety and Eradication Agency"
+slug = "asse"
+size = "extra-small"
+url = "https://www.asse.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Attorney-General's Department"
+slug = "attorney-general"
+size = "medium"
+url = "https://www.attorney-general.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Bureau of Statistics"
+slug = "bureau-of-statistics"
+size = "medium"
+url = "https://www.bureau-of-statistics.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Centre for International Agricultural Research"
+slug = "ciar"
+size = "extra-small"
+url = "https://www.ciar.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Commission on Safety and Quality in Health Care"
+slug = "cosqihc"
+size = "small"
+url = "https://www.cosqihc.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Communications and Media Authority"
+slug = "communications-and-media"
+size = "medium"
+url = "https://www.communications-and-media.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Competition and Consumer Commission"
+slug = "competition-and-consumer"
+size = "medium"
+url = "https://www.competition-and-consumer.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Criminal Intelligence Commission"
+slug = "criminal-intelligence"
+size = "medium"
+url = "https://www.criminal-intelligence.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Digital Health Agency"
+slug = "digital-health"
+size = "medium"
+url = "https://www.digital-health.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Electoral Commission"
+slug = "electoral"
+size = "medium"
+url = "https://www.electoral.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Financial Security Authority"
+slug = "financial-security"
+size = "medium"
+url = "https://www.financial-security.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Fisheries Management Authority"
+slug = "fisheries-management"
+size = "small"
+url = "https://www.fisheries-management.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Human Rights Commission"
+slug = "human-rights"
+size = "small"
+url = "https://www.human-rights.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Institute of Aboriginal and Torres Strait Islander Studies"
+slug = "iatsis"
+size = "small"
+url = "https://www.iatsis.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Institute of Family Studies"
+slug = "institute-of-family-studies"
+size = "small"
+url = "https://www.institute-of-family-studies.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Institute of Health and Welfare"
+slug = "ihw"
+size = "medium"
+url = "https://www.ihw.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Law Reform Commission"
+slug = "law-reform"
+size = "extra-small"
+url = "https://www.law-reform.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian National Audit Office"
+slug = "national-audit"
+size = "medium"
+url = "https://www.national-audit.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian National Maritime Museum"
+slug = "national-maritime-museum"
+size = "small"
+url = "https://www.national-maritime-museum.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Office of Financial Management"
+slug = "office-of-financial-management"
+size = "extra-small"
+url = "https://www.office-of-financial-management.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Pesticides and Veterinary Medicines Authority"
+slug = "pvm"
+size = "small"
+url = "https://www.pvm.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Public Service Commission"
+slug = "public-service"
+size = "medium"
+url = "https://www.public-service.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Radiation Protection and Nuclear Safety Agency"
+slug = "rpns"
+size = "small"
+url = "https://www.rpns.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Research Council"
+slug = "research-council"
+size = "small"
+url = "https://www.research-council.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Skills Quality Authority"
+slug = "skills-quality"
+size = "medium"
+url = "https://www.skills-quality.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Submarine Agency"
+slug = "submarine"
+size = "medium"
+url = "https://www.submarine.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Taxation Office"
+slug = "taxation"
+size = "extra-large"
+url = "https://www.taxation.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Trade and Investment Commission"
+slug = "trade-and-investment"
+size = "medium"
+url = "https://www.trade-and-investment.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Transaction Reports and Analysis Centre"
+slug = "trac"
+size = "medium"
+url = "https://www.trac.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian Transport Safety Bureau"
+slug = "transport-safety-bureau"
+size = "small"
+url = "https://www.transport-safety-bureau.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Australian War Memorial"
+slug = "war-memorial"
+size = "medium"
+url = "https://www.war-memorial.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Bureau of Meteorology"
+slug = "bureau-of-meteorology"
+size = "medium"
+url = "https://www.bureau-of-meteorology.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Cancer Australia"
+slug = "cancer-australia"
+size = "extra-small"
+url = "https://www.cancer-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Clean Energy Regulator"
+slug = "clean-energy-regulator"
+size = "medium"
+url = "https://www.clean-energy-regulator.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Climate Change Authority"
+slug = "climate-change"
+size = "extra-small"
+url = "https://www.climate-change.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Comcare"
+slug = "comcare"
+size = "medium"
+url = "https://www.comcare.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Commonwealth Director of Public Prosecutions"
+slug = "cdpp"
+size = "medium"
+url = "https://www.cdpp.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Commonwealth Grants Commission"
+slug = "commonwealth-grants"
+size = "extra-small"
+url = "https://www.commonwealth-grants.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Defence Housing Australia"
+slug = "defence-housing-australia"
+size = "medium"
+url = "https://www.defence-housing-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Climate Change, Energy, the Environment and Water"
+slug = "cceew"
+size = "medium"
+url = "https://cceew.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Defence"
+slug = "defence"
+size = "extra-large"
+url = "https://defence.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Employment and Workplace Relations"
+slug = "ewr"
+size = "medium"
+url = "https://ewr.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Finance"
+slug = "finance"
+size = "medium"
+url = "https://finance.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Foreign Affairs and Trade"
+slug = "foreign-affairs-and-trade"
+size = "medium"
+url = "https://foreign-affairs-and-trade.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Health, Disability and Ageing"
+slug = "health-disability-and-ageing"
+size = "medium"
+url = "https://health-disability-and-ageing.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Industry, Science and Resources"
+slug = "industry-science-and-resources"
+size = "medium"
+url = "https://industry-science-and-resources.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts"
+slug = "itrdcsa"
+size = "medium"
+url = "https://itrdcsa.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Social Services"
+slug = "social-services"
+size = "medium"
+url = "https://social-services.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of Veterans' Affairs"
+slug = "veterans-affairs"
+size = "medium"
+url = "https://veterans-affairs.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of the Prime Minister and Cabinet"
+slug = "prime-minister-and-cabinet"
+size = "medium"
+url = "https://prime-minister-and-cabinet.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Department of the Treasury"
+slug = "treasury"
+size = "medium"
+url = "https://treasury.gov.au/about/accountability-reporting/ai-transparency-statement"
+
+[[agencies]]
+name = "Domestic, Family and Sexual Violence Commission"
+slug = "dfsv"
+size = "extra-small"
+url = "https://www.dfsv.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Fair Work Commission"
+slug = "fair-work"
+size = "medium"
+url = "https://www.fair-work.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Fair Work Ombudsman"
+slug = "fair-work-ombudsman"
+size = "medium"
+url = "https://www.fair-work-ombudsman.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Federal Court of Australia"
+slug = "federal-court-of-australia"
+size = "medium"
+url = "https://www.federal-court-of-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Food Standards Australia New Zealand"
+slug = "fsanz"
+size = "small"
+url = "https://www.fsanz.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Future Fund Management Agency"
+slug = "future-fund-management"
+size = "medium"
+url = "https://www.future-fund-management.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Geoscience Australia"
+slug = "geoscience-australia"
+size = "medium"
+url = "https://www.geoscience-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Great Barrier Reef Marine Park Authority"
+slug = "great-barrier-reef-marine-park"
+size = "small"
+url = "https://www.great-barrier-reef-marine-park.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "High Speed Rail Authority"
+slug = "high-speed-rail"
+size = "extra-small"
+url = "https://www.high-speed-rail.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "IP Australia"
+slug = "ip-australia"
+size = "medium"
+url = "https://www.ip-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Independent Parliamentary Expenses Authority"
+slug = "independent-parliamentary-expenses"
+size = "extra-small"
+url = "https://www.independent-parliamentary-expenses.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Inspector-General of Taxation and Taxation Ombudsman"
+slug = "igtto"
+size = "extra-small"
+url = "https://www.igtto.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Murray Darling Basin Authority"
+slug = "murray-darling-basin"
+size = "medium"
+url = "https://www.murray-darling-basin.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Museum of Australian Democracy at Old Parliament House"
+slug = "madaoph"
+size = "small"
+url = "https://www.madaoph.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "NDIS Quality and Safeguards Commission"
+slug = "ndis-quality-and-safeguards"
+size = "medium"
+url = "https://www.ndis-quality-and-safeguards.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Anti-Corruption Commission"
+slug = "national-anti-corruption"
+size = "small"
+url = "https://www.national-anti-corruption.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Archives Australia"
+slug = "national-archives-australia"
+size = "medium"
+url = "https://www.national-archives-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Blood Authority"
+slug = "national-blood"
+size = "extra-small"
+url = "https://www.national-blood.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Capital Authority"
+slug = "national-capital"
+size = "extra-small"
+url = "https://www.national-capital.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Commission for Aboriginal and Torres Strait Islander Children and Young People"
+slug = "ncatsicyp"
+size = "micro"
+url = "https://www.ncatsicyp.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Disability Insurance Agency"
+slug = "national-disability-insurance"
+size = "extra-large"
+url = "https://www.national-disability-insurance.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Emergency Management Agency"
+slug = "national-emergency-management"
+size = "medium"
+url = "https://www.national-emergency-management.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Film and Sound Archive of Australia"
+slug = "nfsaa"
+size = "medium"
+url = "https://www.nfsaa.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Health Funding Body"
+slug = "national-health-funding-body"
+size = "extra-small"
+url = "https://www.national-health-funding-body.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Health and Medical Research Council"
+slug = "nhmrc"
+size = "medium"
+url = "https://www.nhmrc.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Library of Australia"
+slug = "national-library-of-australia"
+size = "medium"
+url = "https://www.national-library-of-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Museum of Australia"
+slug = "national-museum-of-australia"
+size = "medium"
+url = "https://www.national-museum-of-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Offshore Petroleum Safety and Environmental Management Authority"
+slug = "nopsem"
+size = "small"
+url = "https://www.nopsem.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "National Portrait Gallery of Australia"
+slug = "npga"
+size = "extra-small"
+url = "https://www.npga.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of National Intelligence"
+slug = "oni"
+size = "medium"
+url = "https://www.oni.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of Parliamentary Counsel"
+slug = "opc"
+size = "small"
+url = "https://www.opc.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of the Australian Information Commissioner"
+slug = "oaic"
+size = "small"
+url = "https://www.oaic.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of the Commonwealth Ombudsman"
+slug = "oco"
+size = "medium"
+url = "https://www.oco.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of the Inspector-General of Aged Care"
+slug = "oigac"
+size = "extra-small"
+url = "https://www.oigac.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of the Inspector-General of Intelligence and Security"
+slug = "oigis"
+size = "extra-small"
+url = "https://www.oigis.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Office of the Special Investigator"
+slug = "osi"
+size = "micro"
+url = "https://www.osi.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Organ and Tissue Authority"
+slug = "organ-and-tissue"
+size = "extra-small"
+url = "https://www.organ-and-tissue.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Parliamentary Workplace Support Service"
+slug = "pwss"
+size = "extra-small"
+url = "https://www.pwss.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Productivity Commission"
+slug = "productivity"
+size = "small"
+url = "https://www.productivity.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Professional Services Review"
+slug = "professional-services-review"
+size = "extra-small"
+url = "https://www.professional-services-review.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Royal Australian Mint"
+slug = "royal-australian-mint"
+size = "medium"
+url = "https://www.royal-australian-mint.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Safe Work Australia"
+slug = "safe-work-australia"
+size = "small"
+url = "https://www.safe-work-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Screen Australia"
+slug = "screen-australia"
+size = "micro"
+url = "https://www.screen-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Services Australia"
+slug = "services-australia"
+size = "extra-large"
+url = "https://www.services-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Sport Integrity Australia"
+slug = "sport-integrity-australia"
+size = "small"
+url = "https://www.sport-integrity-australia.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Tertiary Education Quality and Standards Agency"
+slug = "teqs"
+size = "small"
+url = "https://www.teqs.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Torres Strait Regional Authority"
+slug = "torres-strait-regional"
+size = "small"
+url = "https://www.torres-strait-regional.gov.au/about-us/ai-transparency-statement"
+
+[[agencies]]
+name = "Workplace Gender Equality Agency"
+slug = "workplace-gender-equality"
+size = "extra-small"
+url = "https://www.workplace-gender-equality.gov.au/about-us/ai-transparency-statement"
+
+
