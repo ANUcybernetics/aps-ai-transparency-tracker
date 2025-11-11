@@ -23,6 +23,19 @@ This is a Python web scraping project using uv for dependency management.
   - `scraper.py` has core functionality
   - `__main__.py` provides CLI entry point
 
+## Managing agency URLs
+
+- `agencies.toml` contains 110 Australian Government agencies
+- Each agency has a `url` field for their AI transparency statement
+- Empty URLs (`url = ""`) are converted to `None` by the scraper
+- **Tests fail for agencies with `None` URLs** - this is intentional
+- Scraper skips agencies with `None` URLs when run
+- When adding/fixing URLs:
+  - Search for the agency's AI transparency statement via web search
+  - Most follow pattern: `https://agency.gov.au/.../ai-transparency-statement`
+  - If no statement exists, set `url = ""` (test will fail as a reminder)
+  - Some agencies are exempt (NDIA, DEFENCE) or haven't published yet
+
 ## Code patterns
 
 - Uses `NamedTuple` for data classes (Agency)
