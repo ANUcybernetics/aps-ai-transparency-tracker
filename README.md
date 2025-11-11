@@ -41,15 +41,14 @@ the `statements/` directory.
 
 Each statement is saved as a markdown file with YAML frontmatter containing:
 
-- `agency`: Agency name
-- `slug`: Short identifier used for filename
+- `agency_name`: Agency name
+- `agency_abbr`: Agency abbreviation
 - `source_url`: Original URL of the statement
 - `final_url`: Final URL after redirects
 - `fetched_at`: ISO 8601 timestamp of fetch
-- `title`: Page title
-- `last_modified`: Last modified date (if available in page metadata)
+- `title`: Page title (extracted from HTML if available)
 - `status_code`: HTTP status code
-- `error`: Error message (if fetch failed)
+- `error`: Error message (if fetch failed, otherwise null)
 
 ## Adding new agencies
 
@@ -59,9 +58,14 @@ add a new entry:
 ```toml
 [[agencies]]
 name = "Agency Name"
-slug = "shortname"
+abbr = "ABBR"
+size = "medium"  # small, medium, or large
 url = "https://example.gov.au/ai-transparency-statement"
 ```
+
+If the AI transparency statement URL is unknown or doesn't exist, set
+`url = ""`. The scraper will skip agencies with empty URLs, but tests will fail
+as a reminder to either find the URL or confirm none exists.
 
 ## Requirements
 
