@@ -296,43 +296,23 @@ def test_fetch_first_few_agencies(agency_index):
         assert result["status_code"] == 200
 
 
-def test_all_agencies_can_be_fetched():
+@pytest.mark.parametrize("agency", load_agencies(), ids=lambda a: a.slug)
+def test_all_agencies_can_be_fetched(agency):
     """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
-    agencies = load_agencies()
-    assert len(agencies) > 0, "No agencies loaded from agencies.toml"
+    result = fetch_statement(agency)
 
-    failed_agencies = []
+    # Verify result structure
+    assert isinstance(result, dict), f"{agency.slug}: result is not a dict"
+    assert "error" in result, f"{agency.slug}: missing 'error' field"
 
-    for agency in agencies:
-        result = fetch_statement(agency)
-
-        # Verify result structure
-        assert isinstance(result, dict), f"{agency.slug}: result is not a dict"
-        assert "error" in result, f"{agency.slug}: missing 'error' field"
-
-        # Track failures
-        if result["error"] is not None:
-            failed_agencies.append(
-                {
-                    "name": agency.name,
-                    "slug": agency.slug,
-                    "url": agency.url,
-                    "error": result["error"],
-                    "status_code": result["status_code"],
-                }
-            )
-        else:
-            # Verify successful fetch has required content
-            assert result["status_code"] == 200, f"{agency.slug}: status code not 200"
-            assert result["markdown"], f"{agency.slug}: no markdown content"
-            assert len(result["markdown"]) > 0, f"{agency.slug}: empty markdown"
-
-    # Report all failures at once
-    if failed_agencies:
-        failure_summary = "\n".join(
-            f"  - {f['name']} ({f['slug']}): {f['error']} (status: {f['status_code']})"
-            for f in failed_agencies
-        )
+    # If there's an error, fail with descriptive message
+    if result["error"] is not None:
         pytest.fail(
-            f"{len(failed_agencies)}/{len(agencies)} departments failed:\n{failure_summary}"
+            f"{agency.name} ({agency.slug}): {result['error']} "
+            f"(status: {result['status_code']}, url: {agency.url})"
         )
+
+    # Verify successful fetch has required content
+    assert result["status_code"] == 200, f"{agency.slug}: status code not 200"
+    assert result["markdown"], f"{agency.slug}: no markdown content"
+    assert len(result["markdown"]) > 0, f"{agency.slug}: empty markdown"
