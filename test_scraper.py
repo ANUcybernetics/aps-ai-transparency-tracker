@@ -307,25 +307,25 @@ def test_all_agencies_can_be_fetched():
         result = fetch_statement(agency)
 
         # Verify result structure
-        assert isinstance(result, dict), f"{dept.slug}: result is not a dict"
-        assert "error" in result, f"{dept.slug}: missing 'error' field"
+        assert isinstance(result, dict), f"{agency.slug}: result is not a dict"
+        assert "error" in result, f"{agency.slug}: missing 'error' field"
 
         # Track failures
         if result["error"] is not None:
             failed_agencies.append(
                 {
-                    "name": dept.name,
-                    "slug": dept.slug,
-                    "url": dept.url,
+                    "name": agency.name,
+                    "slug": agency.slug,
+                    "url": agency.url,
                     "error": result["error"],
                     "status_code": result["status_code"],
                 }
             )
         else:
             # Verify successful fetch has required content
-            assert result["status_code"] == 200, f"{dept.slug}: status code not 200"
-            assert result["markdown"], f"{dept.slug}: no markdown content"
-            assert len(result["markdown"]) > 0, f"{dept.slug}: empty markdown"
+            assert result["status_code"] == 200, f"{agency.slug}: status code not 200"
+            assert result["markdown"], f"{agency.slug}: no markdown content"
+            assert len(result["markdown"]) > 0, f"{agency.slug}: empty markdown"
 
     # Report all failures at once
     if failed_agencies:
