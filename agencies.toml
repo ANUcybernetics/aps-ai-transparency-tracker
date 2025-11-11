@@ -375,12 +375,6 @@ size = "medium"
 url = "https://prime-minister-and-cabinet.gov.au/about/accountability-reporting/ai-transparency-statement"
 
 [[agencies]]
-name = "Department of the Treasury"
-slug = "treasury"
-size = "medium"
-url = "https://treasury.gov.au/about/accountability-reporting/ai-transparency-statement"
-
-[[agencies]]
 name = "Domestic, Family and Sexual Violence Commission"
 slug = "dfsv"
 size = "extra-small"
@@ -667,5 +661,3 @@ name = "Workplace Gender Equality Agency"
 slug = "workplace-gender-equality"
 size = "extra-small"
 url = "https://www.workplace-gender-equality.gov.au/about-us/ai-transparency-statement"
-
-
