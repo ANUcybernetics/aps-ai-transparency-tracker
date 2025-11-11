@@ -13,6 +13,7 @@ Usage:
 import logging
 import re
 import sys
+import tomllib
 from datetime import UTC, datetime
 from io import BytesIO
 from pathlib import Path
@@ -38,54 +39,21 @@ class Department(NamedTuple):
     url: str
 
 
-# List of Australian Government departments and their AI Transparency Statement URLs
-DEPARTMENTS = [
-    Department(
-        name="Digital Transformation Agency",
-        slug="dta",
-        url="https://www.dta.gov.au/ai-transparency-statement",
-    ),
-    Department(
-        name="Treasury",
-        slug="treasury",
-        url="https://treasury.gov.au/the-department/accountability-reporting/ai-transparency-statement",
-    ),
-    Department(
-        name="Department of Agriculture, Fisheries and Forestry",
-        slug="daff",
-        url="https://www.agriculture.gov.au/about/reporting/obligations/AI-transparency-statement",
-    ),
-    Department(
-        name="Department of Health and Aged Care",
-        slug="health",
-        url="https://www.health.gov.au/about-us/corporate-reporting/our-commitments/ai-transparency-statement",
-    ),
-    Department(
-        name="National Indigenous Australians Agency",
-        slug="niaa",
-        url="https://www.niaa.gov.au/artificial-intelligence-ai-transparency-statement",
-    ),
-    Department(
-        name="Australian Institute of Criminology",
-        slug="aic",
-        url="https://www.aic.gov.au/about-us/artificial-intelligence-ai-transparency-statement",
-    ),
-    Department(
-        name="Australian Securities and Investments Commission",
-        slug="asic",
-        url="https://www.asic.gov.au/about-asic/what-we-do/how-we-operate/accountability-and-reporting/artificial-intelligence-transparency-statement/",
-    ),
-    Department(
-        name="Department of Education",
-        slug="education",
-        url="https://www.education.gov.au/about-department/corporate-reporting/artificial-intelligence-ai-transparency-statement",
-    ),
-    Department(
-        name="Department of Home Affairs",
-        slug="homeaffairs",
-        url="https://www.homeaffairs.gov.au/commitments/files/ai-transparency-statement.pdf",
-    ),
-]
+def load_departments() -> list[Department]:
+    """
+    Load department data from departments.toml file.
+
+    Returns:
+        List of Department objects
+    """
+    toml_path = Path(__file__).parent / "departments.toml"
+    with open(toml_path, "rb") as f:
+        data = tomllib.load(f)
+
+    return [
+        Department(name=d["name"], slug=d["slug"], url=d["url"])
+        for d in data["departments"]
+    ]
 
 
 def clean_html_to_markdown(html_content: str, base_url: str) -> str:
@@ -302,17 +270,18 @@ def save_statement(
 def main() -> int:
     """Main execution function."""
     output_dir = Path(__file__).parent / "statements"
+    departments = load_departments()
 
     logger.info(
         f"Starting AI Transparency Statement scrape at {datetime.now(UTC).isoformat()}"
     )
     logger.info(f"Output directory: {output_dir}")
-    logger.info(f"Processing {len(DEPARTMENTS)} departments")
+    logger.info(f"Processing {len(departments)} departments")
 
     success_count = 0
     error_count = 0
 
-    for department in DEPARTMENTS:
+    for department in departments:
         data = fetch_statement(department)
         if save_statement(department, data, output_dir):
             success_count += 1

@@ -20,19 +20,20 @@ from bs4 import BeautifulSoup
 # Add current directory to path to import the main script
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scrape_ai_statements import (
-    DEPARTMENTS,
     Department,
     clean_html_to_markdown,
     extract_main_content,
     fetch_statement,
+    load_departments,
     save_statement,
 )
 
 
 def test_departments_list_structure():
-    """Verify DEPARTMENTS list has required structure."""
-    assert len(DEPARTMENTS) > 0
-    for dept in DEPARTMENTS:
+    """Verify departments list has required structure."""
+    departments = load_departments()
+    assert len(departments) > 0
+    for dept in departments:
         assert isinstance(dept, Department)
         assert dept.name
         assert dept.slug
@@ -41,7 +42,8 @@ def test_departments_list_structure():
 
 def test_departments_unique_slugs():
     """Ensure all department slugs are unique."""
-    slugs = [d.slug for d in DEPARTMENTS]
+    departments = load_departments()
+    slugs = [d.slug for d in departments]
     assert len(slugs) == len(set(slugs))
 
 
@@ -102,7 +104,8 @@ def test_extract_main_content_fallback():
 
 def test_fetch_statement_returns_required_fields():
     """Test fetch_statement returns dict with all required fields."""
-    dept = DEPARTMENTS[0]
+    departments = load_departments()
+    dept = departments[0]
     result = fetch_statement(dept)
 
     required_fields = {
@@ -118,7 +121,8 @@ def test_fetch_statement_returns_required_fields():
 
 def test_fetch_statement_handles_success():
     """Test successful fetch has expected characteristics."""
-    dept = DEPARTMENTS[0]
+    departments = load_departments()
+    dept = departments[0]
     result = fetch_statement(dept)
 
     # Either successful or has error
@@ -134,7 +138,8 @@ def test_fetch_statement_handles_success():
 
 def test_fetch_statement_type_consistency():
     """Test fetch_statement returns consistent types."""
-    dept = DEPARTMENTS[0]
+    departments = load_departments()
+    dept = departments[0]
     result = fetch_statement(dept)
 
     # Check types are consistent
@@ -281,10 +286,14 @@ def test_save_statement_includes_final_url_on_redirect():
         assert metadata["source_url"] == "https://example.com/old"
 
 
-@pytest.mark.parametrize("dept_index", range(min(3, len(DEPARTMENTS))))
+@pytest.mark.parametrize("dept_index", range(3))
 def test_fetch_first_few_departments(dept_index):
     """Integration test: fetch first few departments to verify end-to-end."""
-    dept = DEPARTMENTS[dept_index]
+    departments = load_departments()
+    if dept_index >= len(departments):
+        pytest.skip(f"Only {len(departments)} departments available")
+
+    dept = departments[dept_index]
     result = fetch_statement(dept)
 
     # Should return valid result structure
