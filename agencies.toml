@@ -222,13 +222,13 @@ url = "https://www.arc.gov.au/about-arc/arc-strategies-and-policies/ai-transpare
 name = "Australian Skills Quality Authority"
 abbr = "ASQA"
 size = "medium"
-url = "https://www.skills-quality.gov.au/about-us/ai-transparency-statement"
+url = "https://www.asqa.gov.au/about-us/reporting-and-accountability/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Australian Submarine Agency"
 abbr = "ASA"
 size = "medium"
-url = "https://www.submarine.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Australian Taxation Office"
@@ -240,7 +240,7 @@ url = "https://www.ato.gov.au/about-ato/commitments-and-reporting/information-an
 name = "Australian Trade and Investment Commission"
 abbr = "AUSTRADE"
 size = "medium"
-url = "https://www.trade-and-investment.gov.au/about-us/ai-transparency-statement"
+url = "https://www.austrade.gov.au/en/site-information/ai-transparency"
 
 [[agencies]]
 name = "Australian Transaction Reports and Analysis Centre"
@@ -252,7 +252,7 @@ url = "https://www.austrac.gov.au/about-us/corporate-information-and-governance"
 name = "Australian Transport Safety Bureau"
 abbr = "ATSB"
 size = "small"
-url = "https://www.transport-safety-bureau.gov.au/about-us/ai-transparency-statement"
+url = "https://www.atsb.gov.au/ai-transparency-statement"
 
 [[agencies]]
 name = "Australian War Memorial"
@@ -282,7 +282,7 @@ url = ""
 name = "Climate Change Authority"
 abbr = "CCA"
 size = "extra-small"
-url = "https://www.climate-change.gov.au/about-us/ai-transparency-statement"
+url = "https://www.climatechangeauthority.gov.au/artificial-intelligence-transparency-statement"
 
 [[agencies]]
 name = "Comcare"
@@ -300,13 +300,13 @@ url = "https://www.cdpp.gov.au/about-us/ai-transparency-statement"
 name = "Commonwealth Grants Commission"
 abbr = "CGC"
 size = "extra-small"
-url = "https://www.commonwealth-grants.gov.au/about-us/ai-transparency-statement"
+url = "https://www.cgc.gov.au/about-us/accountability-and-reporting/artificial-intelligence-transparency-statement"
 
 [[agencies]]
 name = "Defence Housing Australia"
 abbr = "DHA"
 size = "medium"
-url = "https://www.defence-housing-australia.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Department of Climate Change, Energy, the Environment and Water"
@@ -342,13 +342,13 @@ url = "https://www.dfat.gov.au/about-us/corporate/artificial-intelligence-ai-tra
 name = "Department of Health, Disability and Ageing"
 abbr = "DHDA"
 size = "medium"
-url = "https://health-disability-and-ageing.gov.au/about/accountability-reporting/ai-transparency-statement"
+url = "https://www.dha.gov.au/about-us/our-organisation/artificial-intelligence-(ai)-transparency-statement"
 
 [[agencies]]
 name = "Department of Industry, Science and Resources"
 abbr = "DISR"
 size = "medium"
-url = "https://industry-science-and-resources.gov.au/about/accountability-reporting/ai-transparency-statement"
+url = "https://www.industry.gov.au/publications/artificial-intelligence-transparency-statement"
 
 [[agencies]]
 name = "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts"
@@ -378,7 +378,7 @@ url = "https://www.pmc.gov.au/about-us/accountability-and-reporting/corporate-re
 name = "Domestic, Family and Sexual Violence Commission"
 abbr = "DFSVC"
 size = "extra-small"
-url = "https://www.dfsv.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Fair Work Commission"
@@ -582,7 +582,7 @@ url = "https://www.oigac.gov.au/about-us/corporate-information/ai-transparency-s
 name = "Office of the Inspector-General of Intelligence and Security"
 abbr = "IGIS"
 size = "extra-small"
-url = "https://www.oigis.gov.au/about-us/ai-transparency-statement"
+url = "https://www.igis.gov.au/resources/reporting-and-accountability"
 
 [[agencies]]
 name = "Office of the Special Investigator"
