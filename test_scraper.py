@@ -8,8 +8,6 @@ Usage:
     uv run pytest test_scraper.py -v
 """
 
-import os
-import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -17,9 +15,7 @@ import pytest
 import yaml
 from bs4 import BeautifulSoup
 
-# Add current directory to path to import the main script
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from scrape_ai_statements import (
+from ausgov_ai_transparency_statements import (
     Department,
     clean_html_to_markdown,
     extract_main_content,

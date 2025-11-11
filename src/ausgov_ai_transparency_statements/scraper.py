@@ -1,18 +1,7 @@
-#!/usr/bin/env -S uv run
-"""
-Australian Government AI Transparency Statement Scraper
-
-This script fetches AI Transparency Statements from Australian Government departments
-and saves them as markdown files with YAML frontmatter. Designed to be run via cronjob
-to track changes over time through git.
-
-Usage:
-    uv run scrape_ai_statements.py
-"""
+"""Core scraping functionality for AI transparency statements."""
 
 import logging
 import re
-import sys
 import tomllib
 from datetime import UTC, datetime
 from io import BytesIO
@@ -46,7 +35,7 @@ def load_departments() -> list[Department]:
     Returns:
         List of Department objects
     """
-    toml_path = Path(__file__).parent / "departments.toml"
+    toml_path = Path(__file__).parent.parent.parent / "departments.toml"
     with open(toml_path, "rb") as f:
         data = tomllib.load(f)
 
@@ -265,33 +254,3 @@ def save_statement(
     filepath.write_text(content, encoding="utf-8")
     logger.info(f"Saved {filename}")
     return True
-
-
-def main() -> int:
-    """Main execution function."""
-    output_dir = Path(__file__).parent / "statements"
-    departments = load_departments()
-
-    logger.info(
-        f"Starting AI Transparency Statement scrape at {datetime.now(UTC).isoformat()}"
-    )
-    logger.info(f"Output directory: {output_dir}")
-    logger.info(f"Processing {len(departments)} departments")
-
-    success_count = 0
-    error_count = 0
-
-    for department in departments:
-        data = fetch_statement(department)
-        if save_statement(department, data, output_dir):
-            success_count += 1
-        else:
-            error_count += 1
-
-    logger.info(f"Completed: {success_count} successful, {error_count} errors")
-
-    return 0 if error_count == 0 else 1
-
-
-if __name__ == "__main__":
-    sys.exit(main())

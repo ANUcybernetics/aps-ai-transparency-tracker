@@ -20,7 +20,13 @@ git.
 Run the scraper:
 
 ```bash
-uv run scrape_ai_statements.py
+uv run --module ausgov_ai_transparency_statements
+```
+
+Or use the installed command (after `uv sync`):
+
+```bash
+scrape-ai-statements
 ```
 
 The script will fetch all configured AI Transparency Statements and save them to
@@ -32,7 +38,7 @@ To run this automatically, add to your crontab:
 
 ```bash
 # Run daily at 2am
-0 2 * * * cd /path/to/ausgov-ai-transparency-statements && uv run scrape_ai_statements.py && git add statements/ && git commit -m "Update AI transparency statements $(date +\%Y-\%m-\%d)" && git push
+0 2 * * * cd /path/to/ausgov-ai-transparency-statements && uv run --module ausgov_ai_transparency_statements && git add statements/ && git commit -m "Update AI transparency statements $(date +\%Y-\%m-\%d)" && git push
 ```
 
 ## Output format
@@ -51,23 +57,21 @@ Each statement is saved as a markdown file with YAML frontmatter containing:
 
 ## Adding new departments
 
-To add a new department, edit `scrape_ai_statements.py` and add an entry to the
-`DEPARTMENTS` list:
+To add a new department, edit `departments.toml` and add a new entry:
 
-```python
-Department(
-    name="Department Name",
-    slug="shortname",
-    url="https://example.gov.au/ai-transparency-statement"
-)
+```toml
+[[departments]]
+name = "Department Name"
+slug = "shortname"
+url = "https://example.gov.au/ai-transparency-statement"
 ```
 
 ## Requirements
 
-- `uv` (for python wrangling)
+- `uv` (for Python package management)
 
-That's it---dependencies are automatically installed by uv from the script's
-inline metadata.
+That's it---dependencies are automatically installed by uv from
+`pyproject.toml`.
 
 ## Author
 
