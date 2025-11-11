@@ -1,15 +1,17 @@
-# Australian Government AI Transparency Statements
+# Australian Government AI Transparency Tracker
 
-This repository tracks AI Transparency Statements from Australian Government
+This repository tracks **AI Transparency Statements** from Australian Government
 agencies.
+
+A _Cybernetic Studio_ project by [Ben Swift](https://benswift.me).
 
 ## Background
 
 Under the
 [Policy for the responsible use of AI in government](https://www.digital.gov.au/policy/ai/policy),
-all Australian Government agencies are required to publish AI Transparency
-Statements on their websites. These statements must be updated at least
-annually.
+all Australian Government agencies are required (since Feb 28 2025) to publish
+AI Transparency Statements on their websites. These statements must be updated
+at least annually.
 
 This project automatically scrapes these statements and stores them as markdown
 files with YAML frontmatter, allowing changes to be tracked over time through
@@ -35,15 +37,6 @@ scrape-ai-statements
 The script will fetch all configured AI Transparency Statements and save them to
 the `statements/` directory.
 
-## Cronjob setup
-
-To run this automatically, add to your crontab:
-
-```bash
-# Run daily at 2am
-0 2 * * * cd /path/to/ausgov-ai-transparency-statements && uv run --module ausgov_ai_transparency_statements && git add statements/ && git commit -m "Update AI transparency statements $(date +\%Y-\%m-\%d)" && git push
-```
-
 ## Output format
 
 Each statement is saved as a markdown file with YAML frontmatter containing:
@@ -60,7 +53,8 @@ Each statement is saved as a markdown file with YAML frontmatter containing:
 
 ## Adding new agencies
 
-To add a new agency, edit `agencies.toml` and add a new entry:
+To add a new agency (because government's gonna MOG), edit `agencies.toml` and
+add a new entry:
 
 ```toml
 [[agencies]]
@@ -80,7 +74,8 @@ That's it---dependencies are automatically installed by uv from
 
 (c) Ben Swift
 
-A _Cybernetic Studio_ project.
+TODO add a note about the actual statements being under their own individual
+licenses.
 
 ## License
 
