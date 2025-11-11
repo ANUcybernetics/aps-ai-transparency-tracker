@@ -60,7 +60,7 @@ url = "https://www.homeaffairs.gov.au/commitments/files/ai-transparency-statemen
 name = "Aboriginal Hostels Limited"
 abbr = "AHL"
 size = "medium"
-url = "https://www.aboriginal-hostels-limited.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Administrative Review Tribunal"
@@ -96,7 +96,7 @@ url = "https://www.abs.gov.au/about/legislation-and-policy/ai-transparency-state
 name = "Australian Centre for International Agricultural Research"
 abbr = "ACIAR"
 size = "extra-small"
-url = "https://www.ciar.gov.au/about-us/ai-transparency-statement"
+url = "https://www.aciar.gov.au/artificial-intelligence"
 
 [[agencies]]
 name = "Australian Commission on Safety and Quality in Health Care"
@@ -120,7 +120,7 @@ url = "https://www.accc.gov.au/about-us/accc-role-and-structure/governance-and-a
 name = "Australian Criminal Intelligence Commission"
 abbr = "ACIC"
 size = "medium"
-url = "https://www.criminal-intelligence.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Australian Digital Health Agency"
@@ -168,7 +168,7 @@ url = "https://aifs.gov.au/main/policies/ai-transparency-statement"
 name = "Australian Institute of Health and Welfare"
 abbr = "AIHW"
 size = "medium"
-url = "https://www.ihw.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Australian Law Reform Commission"
@@ -192,31 +192,31 @@ url = ""
 name = "Australian Office of Financial Management"
 abbr = "AOFM"
 size = "extra-small"
-url = "https://www.office-of-financial-management.gov.au/about-us/ai-transparency-statement"
+url = "https://www.aofm.gov.au/about/compliance-reporting/artificial-intelligence-transparency-statement"
 
 [[agencies]]
 name = "Australian Pesticides and Veterinary Medicines Authority"
 abbr = "APVMA"
 size = "small"
-url = "https://www.pvm.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Australian Public Service Commission"
 abbr = "APSC"
 size = "medium"
-url = "https://www.public-service.gov.au/about-us/ai-transparency-statement"
+url = "https://www.apsc.gov.au/about-us/accountability-and-reporting/transparent-use-ai-commission"
 
 [[agencies]]
 name = "Australian Radiation Protection and Nuclear Safety Agency"
 abbr = "ARPANSA"
 size = "small"
-url = "https://www.rpns.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Australian Research Council"
 abbr = "ARC"
 size = "small"
-url = "https://www.research-council.gov.au/about-us/ai-transparency-statement"
+url = "https://www.arc.gov.au/about-arc/arc-strategies-and-policies/ai-transparency"
 
 [[agencies]]
 name = "Australian Skills Quality Authority"
@@ -246,7 +246,7 @@ url = "https://www.trade-and-investment.gov.au/about-us/ai-transparency-statemen
 name = "Australian Transaction Reports and Analysis Centre"
 abbr = "AUSTRAC"
 size = "medium"
-url = "https://www.trac.gov.au/about-us/ai-transparency-statement"
+url = "https://www.austrac.gov.au/about-us/corporate-information-and-governance"
 
 [[agencies]]
 name = "Australian Transport Safety Bureau"
@@ -258,7 +258,7 @@ url = "https://www.transport-safety-bureau.gov.au/about-us/ai-transparency-state
 name = "Australian War Memorial"
 abbr = "AWM"
 size = "medium"
-url = "https://www.war-memorial.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Bureau of Meteorology"
@@ -270,13 +270,13 @@ url = ""
 name = "Cancer Australia"
 abbr = "CA"
 size = "extra-small"
-url = "https://www.cancer-australia.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Clean Energy Regulator"
 abbr = "CER"
 size = "medium"
-url = "https://www.clean-energy-regulator.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Climate Change Authority"
@@ -288,7 +288,7 @@ url = "https://www.climate-change.gov.au/about-us/ai-transparency-statement"
 name = "Comcare"
 abbr = "COMCARE"
 size = "medium"
-url = "https://www.comcare.gov.au/about-us/ai-transparency-statement"
+url = "https://www.comcare.gov.au/about/forms-pubs/docs/pubs/corporate-publications/ai-transparency-statement"
 
 [[agencies]]
 name = "Commonwealth Director of Public Prosecutions"
@@ -312,7 +312,7 @@ url = "https://www.defence-housing-australia.gov.au/about-us/ai-transparency-sta
 name = "Department of Climate Change, Energy, the Environment and Water"
 abbr = "DCCEEW"
 size = "medium"
-url = "https://cceew.gov.au/about/accountability-reporting/ai-transparency-statement"
+url = "https://www.dcceew.gov.au/about/commitment/information-public-data/ai-transparency-statement"
 
 [[agencies]]
 name = "Department of Defence"
@@ -354,7 +354,7 @@ url = "https://industry-science-and-resources.gov.au/about/accountability-report
 name = "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts"
 abbr = "DITRDCA"
 size = "medium"
-url = "https://itrdcsa.gov.au/about/accountability-reporting/ai-transparency-statement"
+url = "https://www.infrastructure.gov.au/about-us/accountability-reporting/ai-transparency-statement"
 
 [[agencies]]
 name = "Department of Social Services"
@@ -366,7 +366,7 @@ url = "https://www.dss.gov.au/doing-business-us/corporate-policies/artificial-in
 name = "Department of Veterans' Affairs"
 abbr = "DVA"
 size = "medium"
-url = "https://veterans-affairs.gov.au/about/accountability-reporting/ai-transparency-statement"
+url = "https://www.dva.gov.au/about/accessing-information/what-can-i-access/corporate-information-access/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Department of the Prime Minister and Cabinet"
@@ -384,115 +384,115 @@ url = "https://www.dfsv.gov.au/about-us/ai-transparency-statement"
 name = "Fair Work Commission"
 abbr = "FWC"
 size = "medium"
-url = "https://www.fair-work.gov.au/about-us/ai-transparency-statement"
+url = "https://www.fwc.gov.au/about-us/artificial-intelligence-transparency-statement"
 
 [[agencies]]
 name = "Fair Work Ombudsman"
 abbr = "FWO"
 size = "medium"
-url = "https://www.fair-work-ombudsman.gov.au/about-us/ai-transparency-statement"
+url = "https://www.fairwork.gov.au/about-us/who-we-are/corporate-information/ai-transparency-statement"
 
 [[agencies]]
 name = "Federal Court of Australia"
 abbr = "FCA"
 size = "medium"
-url = "https://www.federal-court-of-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.fca.gov.au/about-us/accountability/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Food Standards Australia New Zealand"
 abbr = "FSANZ"
 size = "small"
-url = "https://www.fsanz.gov.au/about-us/ai-transparency-statement"
+url = "https://www.foodstandards.gov.au/about/Pages/Artificial-Intelligence-(AI)-Transparency-Statement.aspx"
 
 [[agencies]]
 name = "Future Fund Management Agency"
 abbr = "FFMA"
 size = "medium"
-url = "https://www.future-fund-management.gov.au/about-us/ai-transparency-statement"
+url = "https://www.future.edu.au/ai-transparency-statement"
 
 [[agencies]]
 name = "Geoscience Australia"
 abbr = "GA"
 size = "medium"
-url = "https://www.geoscience-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.ga.gov.au/about/corporate-documents/ai-transparency-statement"
 
 [[agencies]]
 name = "Great Barrier Reef Marine Park Authority"
 abbr = "GBRMPA"
 size = "small"
-url = "https://www.great-barrier-reef-marine-park.gov.au/about-us/ai-transparency-statement"
+url = "https://www2.gbrmpa.gov.au/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "High Speed Rail Authority"
 abbr = "HSRA"
 size = "extra-small"
-url = "https://www.high-speed-rail.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "IP Australia"
 abbr = "IPA"
 size = "medium"
-url = "https://www.ip-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.ipaustralia.gov.au/news-and-community/news/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Independent Parliamentary Expenses Authority"
 abbr = "IPEA"
 size = "extra-small"
-url = "https://www.independent-parliamentary-expenses.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Inspector-General of Taxation and Taxation Ombudsman"
 abbr = "IGTO"
 size = "extra-small"
-url = "https://www.igtto.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Murray Darling Basin Authority"
 abbr = "MDBA"
 size = "medium"
-url = "https://www.murray-darling-basin.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Museum of Australian Democracy at Old Parliament House"
 abbr = "MOADOPH"
 size = "small"
-url = "https://www.madaoph.gov.au/about-us/ai-transparency-statement"
+url = "https://www.moadoph.gov.au/about-us/moadoph-ai-transparency-statement"
 
 [[agencies]]
 name = "NDIS Quality and Safeguards Commission"
 abbr = "NDISQSC"
 size = "medium"
-url = "https://www.ndis-quality-and-safeguards.gov.au/about-us/ai-transparency-statement"
+url = "https://www.ndiscommission.gov.au/about-us/corporate-reports/ai-statement"
 
 [[agencies]]
 name = "National Anti-Corruption Commission"
 abbr = "NACC"
 size = "small"
-url = "https://www.national-anti-corruption.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nacc.gov.au/about/accountability-and-reporting/ai-transparency-statement"
 
 [[agencies]]
 name = "National Archives Australia"
 abbr = "NAA"
 size = "medium"
-url = "https://www.national-archives-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.naa.gov.au/about-us/who-we-are/accountability-and-reporting/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "National Blood Authority"
 abbr = "NBA"
 size = "extra-small"
-url = "https://www.national-blood.gov.au/about-us/ai-transparency-statement"
+url = "https://www.blood.gov.au/nbas-ai-transparency-statement"
 
 [[agencies]]
 name = "National Capital Authority"
 abbr = "NCA"
 size = "extra-small"
-url = "https://www.national-capital.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nca.gov.au/nca-artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "National Commission for Aboriginal and Torres Strait Islander Children and Young People"
 abbr = "NCATSICYP"
 size = "micro"
-url = "https://www.ncatsicyp.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "National Disability Insurance Agency"
@@ -504,61 +504,61 @@ url = ""
 name = "National Emergency Management Agency"
 abbr = "NEMA"
 size = "medium"
-url = "https://www.national-emergency-management.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nema.gov.au/about-nema/accountability-reporting/ai-transparency-statement"
 
 [[agencies]]
 name = "National Film and Sound Archive of Australia"
 abbr = "NFSA"
 size = "medium"
-url = "https://www.nfsaa.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nfsa.gov.au/latest/nfsa-principles-ml-and-ai"
 
 [[agencies]]
 name = "National Health Funding Body"
 abbr = "NHFB"
 size = "extra-small"
-url = "https://www.national-health-funding-body.gov.au/about-us/ai-transparency-statement"
+url = "https://www.publichospitalfunding.gov.au/about-us/corporate-governance/ai-transparency-statement"
 
 [[agencies]]
 name = "National Health and Medical Research Council"
 abbr = "NHMRC"
 size = "medium"
-url = "https://www.nhmrc.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nhmrc.gov.au/about-us/accountability-and-reporting/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "National Library of Australia"
 abbr = "NLA"
 size = "medium"
-url = "https://www.national-library-of-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.nla.gov.au/about-us/corporate-documents/corporate-strategies"
 
 [[agencies]]
 name = "National Museum of Australia"
 abbr = "NMA"
 size = "medium"
-url = "https://www.national-museum-of-australia.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "National Offshore Petroleum Safety and Environmental Management Authority"
 abbr = "NOPSEMA"
 size = "small"
-url = "https://www.nopsem.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "National Portrait Gallery of Australia"
 abbr = "NGA"
 size = "extra-small"
-url = "https://www.npga.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Office of National Intelligence"
 abbr = "ONI"
 size = "medium"
-url = "https://www.oni.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Office of Parliamentary Counsel"
 abbr = "OPC"
 size = "small"
-url = "https://www.opc.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Office of the Australian Information Commissioner"
@@ -570,13 +570,13 @@ url = "https://www.oaic.gov.au/about-the-OAIC/our-corporate-information/oaic-ai-
 name = "Office of the Commonwealth Ombudsman"
 abbr = "OCO"
 size = "medium"
-url = "https://www.oco.gov.au/about-us/ai-transparency-statement"
+url = "https://www.ombudsman.gov.au/about/ai-transparency-statement"
 
 [[agencies]]
 name = "Office of the Inspector-General of Aged Care"
 abbr = "OIGAC"
 size = "extra-small"
-url = "https://www.oigac.gov.au/about-us/ai-transparency-statement"
+url = "https://www.oigac.gov.au/about-us/corporate-information/ai-transparency-statement"
 
 [[agencies]]
 name = "Office of the Inspector-General of Intelligence and Security"
@@ -588,49 +588,49 @@ url = "https://www.oigis.gov.au/about-us/ai-transparency-statement"
 name = "Office of the Special Investigator"
 abbr = "OSI"
 size = "micro"
-url = "https://www.osi.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Organ and Tissue Authority"
 abbr = "OTA"
 size = "extra-small"
-url = "https://www.organ-and-tissue.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Parliamentary Workplace Support Service"
 abbr = "PWSS"
 size = "extra-small"
-url = "https://www.pwss.gov.au/about-us/ai-transparency-statement"
+url = "https://www.pwss.gov.au/about-us/corporate-information/ai-transparency-statement"
 
 [[agencies]]
 name = "Productivity Commission"
 abbr = "PC"
 size = "small"
-url = "https://www.productivity.gov.au/about-us/ai-transparency-statement"
+url = "https://www.pc.gov.au/ai-transparency"
 
 [[agencies]]
 name = "Professional Services Review"
 abbr = "PSR"
 size = "extra-small"
-url = "https://www.professional-services-review.gov.au/about-us/ai-transparency-statement"
+url = "https://www.psr.gov.au/publications-and-resources/publications/corporate-documents/artificial-intelligence-ai-transparency-statement"
 
 [[agencies]]
 name = "Royal Australian Mint"
 abbr = "RAM"
 size = "medium"
-url = "https://www.royal-australian-mint.gov.au/about-us/ai-transparency-statement"
+url = "https://www.ram.gov.au/about/accountability/ai-transparency-statement"
 
 [[agencies]]
 name = "Safe Work Australia"
 abbr = "SWA"
 size = "small"
-url = "https://www.safe-work-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.safeworkaustralia.gov.au/about-us/corporate-publications-and-resources/ai-transparency-statement"
 
 [[agencies]]
 name = "Screen Australia"
 abbr = "SA"
 size = "micro"
-url = "https://www.screen-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.screenaustralia.gov.au/sa/about-us/corporate-documents/policies-(1)/ai-transparency-statement"
 
 [[agencies]]
 name = "Services Australia"
@@ -642,22 +642,22 @@ url = "https://www.servicesaustralia.gov.au/automation-and-artificial-intelligen
 name = "Sport Integrity Australia"
 abbr = "SIA"
 size = "small"
-url = "https://www.sport-integrity-australia.gov.au/about-us/ai-transparency-statement"
+url = "https://www.sia.gov.au/about-us/corporate-reporting/ai-transparency-statement"
 
 [[agencies]]
 name = "Tertiary Education Quality and Standards Agency"
 abbr = "TEQSA"
 size = "small"
-url = "https://www.teqs.gov.au/about-us/ai-transparency-statement"
+url = "https://www.teqsa.gov.au/about-us/reporting-and-accountability/ai-transparency-statement"
 
 [[agencies]]
 name = "Torres Strait Regional Authority"
 abbr = "TSRA"
 size = "small"
-url = "https://www.torres-strait-regional.gov.au/about-us/ai-transparency-statement"
+url = ""
 
 [[agencies]]
 name = "Workplace Gender Equality Agency"
 abbr = "WGEA"
 size = "extra-small"
-url = "https://www.workplace-gender-equality.gov.au/about-us/ai-transparency-statement"
+url = "https://www.wgea.gov.au/about/governance-and-reporting"
