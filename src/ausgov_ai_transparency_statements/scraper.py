@@ -25,7 +25,7 @@ class Agency(NamedTuple):
 
     name: str
     abbr: str
-    url: str
+    url: str | None
 
 
 def load_agencies() -> list[Agency]:
@@ -34,7 +34,8 @@ def load_agencies() -> list[Agency]:
     with open(toml_path, "rb") as f:
         data = tomllib.load(f)
     return [
-        Agency(name=d["name"], abbr=d["abbr"], url=d["url"]) for d in data["agencies"]
+        Agency(name=d["name"], abbr=d["abbr"], url=d["url"] if d["url"] else None)
+        for d in data["agencies"]
     ]
 
 

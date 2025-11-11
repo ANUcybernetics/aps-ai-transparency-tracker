@@ -33,7 +33,7 @@ def test_agencies_list_structure():
         assert isinstance(agency, Agency)
         assert agency.name
         assert agency.abbr
-        assert agency.url.startswith("http")
+        assert agency.url is None or agency.url.startswith("http")
 
 
 def test_agencies_unique_abbrs():
@@ -286,6 +286,10 @@ def test_fetch_first_few_agencies(agency_index):
 @pytest.mark.parametrize("agency", load_agencies(), ids=lambda a: a.abbr)
 def test_all_agencies_can_be_fetched(agency):
     """Integration test: verify all agencies in agencies.toml can be fetched and parsed."""
+    # Skip agencies without URLs (where AI statement not found)
+    if agency.url is None:
+        pytest.skip(f"{agency.abbr}: No AI transparency statement URL available")
+
     result = fetch_statement(agency)
 
     # Verify result structure
