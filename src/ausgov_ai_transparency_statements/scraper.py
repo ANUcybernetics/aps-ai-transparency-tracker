@@ -138,17 +138,11 @@ def save_statement(
     if data["final_url"] != agency.url:
         frontmatter["final_url"] = data["final_url"]
 
-    content = "\n".join(
-        [
-            "---",
-            yaml.dump(
-                frontmatter, default_flow_style=False, allow_unicode=True
-            ).strip(),
-            "---",
-            "",
-            data["markdown"],
-        ]
-    )
+    yaml_str: str = yaml.dump(
+        frontmatter, default_flow_style=False, allow_unicode=True
+    ).strip()
+    markdown_str: str = str(data["markdown"])
+    content = "\n".join(["---", yaml_str, "---", "", markdown_str])
 
     filepath = output_dir / f"{agency.abbr}.md"
     filepath.write_text(content, encoding="utf-8")

@@ -4,7 +4,7 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-from .scraper import fetch_statement, logger, save_statement
+from .scraper import fetch_statement, load_agencies, logger, save_statement
 
 
 def main() -> int:

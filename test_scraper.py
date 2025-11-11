@@ -118,7 +118,8 @@ def test_fetch_statement_handles_success():
     if result["error"] is None:
         assert result["status_code"] == 200
         assert result["markdown"] is not None
-        assert len(result["markdown"]) > 0
+        markdown_content = result["markdown"]
+        assert isinstance(markdown_content, str) and len(markdown_content) > 0
         assert result["final_url"] is not None
     else:
         # If there's an error, status_code might be None or error code
@@ -301,4 +302,7 @@ def test_all_agencies_can_be_fetched(agency):
     # Verify successful fetch has required content
     assert result["status_code"] == 200, f"{agency.abbr}: status code not 200"
     assert result["markdown"], f"{agency.abbr}: no markdown content"
-    assert len(result["markdown"]) > 0, f"{agency.abbr}: empty markdown"
+    markdown_content = result["markdown"]
+    assert isinstance(markdown_content, str) and len(markdown_content) > 0, (
+        f"{agency.abbr}: empty markdown"
+    )
