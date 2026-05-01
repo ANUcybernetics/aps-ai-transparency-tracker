@@ -23,7 +23,7 @@ The CGC's endorsed AI applications are used internally to support workplace prod
 
 ### Public Interaction and impact
 
-The CGC is committed to ensuring that its use of AI is responsible, environmentally considerate, and in the public interest. The CGC does not currently use any AI systems that directly interact with the public or make decisions that affect individuals without human oversight. 
+The CGC is committed to ensuring that its use of AI is responsible, environmentally considerate, and in the public interest. The CGC does not currently use any AI systems that directly interact with the public or make decisions that affect individuals without human oversight.
 
 ### Governance
 

@@ -22,10 +22,10 @@ We will be transparent as we evolve and adapt to changes in AI technology and po
 
 We have processes to ensure:
 
-  * our AI use is appropriately governed
-  * our engagement with AI is confident, safe and responsible
-  * our risks are identified and addressed, and
-  * our AI access and usage is monitored.
+- our AI use is appropriately governed
+- our engagement with AI is confident, safe and responsible
+- our risks are identified and addressed, and
+- our AI access and usage is monitored.
 
 We do not use AI in compliance, auditing or decision-making processes without human oversight.
 

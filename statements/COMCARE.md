@@ -7,7 +7,7 @@ title: AI Transparency Statement | Comcare
 
 # AI Transparency Statement
 
-* * *
+______________________________________________________________________
 
 Comcare acknowledges the Digital Transformation Agency's [Policy for the responsible use of Artificial Intelligence (AI) in government](https://www.digital.gov.au/policy/ai/policy) (the Policy) that sets the approach for the use of AI by government.
 
@@ -17,22 +17,22 @@ Comcare at present does not use AI for any of its core functions or responsibili
 
 Comcare currently is exploring the use of AI in a limited and controlled manner, primarily to support internal analysis, information management, and workplace productivity.
 
-Comcare is undertaking a targeted program of work, aligned to Digital Transformation Agency guidance, to establish a practical, risk‑based framework for identifying, governing, and overseeing AI use across the agency.  
-  
+Comcare is undertaking a targeted program of work, aligned to Digital Transformation Agency guidance, to establish a practical, risk‑based framework for identifying, governing, and overseeing AI use across the agency.
+
 The focus is on strengthening governance, decision‑making, assurance, and visibility of AI activity, rather than delivering individual AI solutions. This governance uplift will guide future AI adoption at Comcare.
 
 ## Responsible use commitments
 
 Comcare sees benefits from using AI to improve the analysis and communication of information flows and in improving workplace productivity. We are committed to safe, ethical, and responsible AI use, guided by:
 
-  * existing information security, privacy, and risk management frameworks
-  * alignment with Australia's Voluntary AI Safety Standard and AI Ethics Principles
-  * mandatory staff training on AI fundamentals, privacy, data analytics, and cybersecurity
-  * additional training for employees involved in AI procurement, development, and deployment
-  * strict compliance with relevant legislation, frameworks, and policies
-  * active monitoring of AI usage to ensure continued security and compliance.
+- existing information security, privacy, and risk management frameworks
+- alignment with Australia's Voluntary AI Safety Standard and AI Ethics Principles
+- mandatory staff training on AI fundamentals, privacy, data analytics, and cybersecurity
+- additional training for employees involved in AI procurement, development, and deployment
+- strict compliance with relevant legislation, frameworks, and policies
+- active monitoring of AI usage to ensure continued security and compliance.
 
-This statement was **published in February 2025 and reviewed in April 2026**. It will be reviewed annually, or earlier if there is a material change to Comcare’s use of AI.  
+This statement was **published in February 2025 and reviewed in April 2026**. It will be reviewed annually, or earlier if there is a material change to Comcare’s use of AI.
 
 ## Contact us
 

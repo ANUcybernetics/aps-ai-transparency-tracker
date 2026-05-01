@@ -21,15 +21,15 @@ The Authority commits to using AI in a safe and responsible manner. We use AI wi
 
 The Authority uses AI to support our development of high‑quality, evidence‑based advice to the Australian Government and improve our workplace productivity.
 
-In accordance with the [Australian Government’s Classification system for AI use(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/resources/use-classification), our current AI use focuses on scientific, policy, corporate and enabling domains. 
+In accordance with the [Australian Government’s Classification system for AI use(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/resources/use-classification), our current AI use focuses on scientific, policy, corporate and enabling domains.
 
 Examples of how we use AI, with human oversight, include support with editing and drafting documents, assistance with policy research, analysis of structured and unstructured information to identify themes and insights, and support for creating internal administrative content such as minutes and transcripts.
 
-The Authority supports staff use of generative AI tools by providing guidance to ensure use is responsible and ethical, and in accordance with relevant legislation and policies. 
+The Authority supports staff use of generative AI tools by providing guidance to ensure use is responsible and ethical, and in accordance with relevant legislation and policies.
 
 ## Public interaction and impact
 
-The Authority is committed to ensuring that its use of AI is responsible, environmentally considerate, and in the public interest. The Authority does not currently use any AI systems that directly interact with the public or make decisions that affect individuals without human oversight. 
+The Authority is committed to ensuring that its use of AI is responsible, environmentally considerate, and in the public interest. The Authority does not currently use any AI systems that directly interact with the public or make decisions that affect individuals without human oversight.
 
 ## Monitoring AI effectiveness and impacts
 
@@ -37,21 +37,21 @@ The Authority uses AI with human oversight, and staff remain responsible for con
 
 ## Governance processes
 
-The Authority’s Corporate General Manager is designated as the accountable official for AI under the [Policy for responsible use of AI in government(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/policy). 
+The Authority’s Corporate General Manager is designated as the accountable official for AI under the [Policy for responsible use of AI in government(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/policy).
 
 Staff must comply with all internal AI policies, which are aligned with broader Australian Government policy requirements and the Department of Climate Change, Energy, the Environment and Water’s (the Authority’s ICT shared service provider) policies.
 
 ## Compliance
 
-We comply with all mandatory requirements under the [Policy for responsible use of AI in government(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/policy). 
+We comply with all mandatory requirements under the [Policy for responsible use of AI in government(Opens in a new tab/window)](https://www.digital.gov.au/policy/ai/policy).
 
 We use AI in accordance with applicable legislation and regulation, including (where relevant):
 
-  * _Public Governance, Performance and Accountability Act 2013_
-  *  _Privacy Act 1988_
-  *  _Archives Act 1983_
+- _Public Governance, Performance and Accountability Act 2013_
+- _Privacy Act 1988_
+- _Archives Act 1983_
 
-##  Contact
+## Contact
 
 For further information or enquiries about this statement, please [contact us](https://www.climatechangeauthority.gov.au/contact-us "Contact us").
 

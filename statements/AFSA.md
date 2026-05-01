@@ -11,7 +11,7 @@ title: Artificial Intelligence (AI) transparency statement | Australian Financia
 
 The Digital Transformation Agency policy for responsible AI use sets mandatory requirements for AFSA's accountable official and transparency statement.
 
-Skip to body content 
+Skip to body content
 
 ## On this page
 
@@ -43,8 +43,8 @@ This does not include the use of AI where the public may directly interact with,
 
 We comply with the mandatory requirements outlined in the DTA's AI Policy, including:
 
-  * nomination of AFSA's Chief Information Officer as our accountable official. This role ensures robust monitoring and evaluation of AI systems to maintain effectiveness, fairness, and compliance with government policies, and leads development of governance for AI adoption in AFSA.
-  * publication of this transparency statement on AFSA's website.
+- nomination of AFSA's Chief Information Officer as our accountable official. This role ensures robust monitoring and evaluation of AI systems to maintain effectiveness, fairness, and compliance with government policies, and leads development of governance for AI adoption in AFSA.
+- publication of this transparency statement on AFSA's website.
 
 We are also planning our approach to achieving compliance with the additional requirements within the timeframes required by the current version of the policy (v2.0).
 
