@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Moved — APS AI Tracker</title>
+    <link rel="canonical" href="https://anucybernetics.github.io/aps-ai-tracker/" />
+    <script>
+      // Path-preserving redirect: map the old project-Pages base onto the new
+      // one, so deep inbound links (e.g. /statements/ABS) survive the rename.
+      (function () {
+        var oldBase = "/aps-ai-transparency-tracker";
+        var newBase = "/aps-ai-tracker";
+        var path = location.pathname;
+        if (path.indexOf(oldBase) === 0) {
+          path = newBase + path.slice(oldBase.length);
+        }
+        location.replace(location.origin + path + location.search + location.hash);
+      })();
+    </script>
+    <!-- No-JS fallback: can't preserve the sub-path, so land on the new home. -->
+    <meta
+      http-equiv="refresh"
+      content="1; url=https://anucybernetics.github.io/aps-ai-tracker/"
+    />
+  </head>
+  <body>
+    <p>
+      This project has moved to
+      <a href="https://anucybernetics.github.io/aps-ai-tracker/"
+        >anucybernetics.github.io/aps-ai-tracker/</a
+      >. Redirecting you now.
+    </p>
+  </body>
+</html>
